@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboobacker | Graphic Designer Portfolio</title>
+    <meta name="description" content="Portfolio of Aboobacker, a Graphic Design student specializing in Branding, UI Design, and Illustration.">
+    
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Aboobacker<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <span class="subtitle fade-in">Hello, I'm</span>
+            <h1 class="fade-in delay-1">Aboobacker</h1>
+            <h2 class="fade-in delay-2">Graphic Designer & Visual Storyteller</h2>
+            <p class="fade-in delay-3">Crafting digital experiences with a focus on clean aesthetics and meaningful interactions.</p>
+            <div class="cta-buttons fade-in delay-4">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-decorative fade-in delay-5">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">Passionate about design <br> and user experience.</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I am a Graphic Design student with a keen eye for detail and a love for minimalism. My journey started with experimenting with colors and shapes, evolving into a professional pursuit of creating impactful visual identities.</p>
+                    <p>I believe that good design is not just about how it looks, but how it works and how it makes people feel. I specialize in branding, UI/UX design, and digital illustration.</p>
+                </div>
+                
+                <div class="skills-wrapper reveal">
+                    <h3>My Toolset</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><i class="fab fa-figma"></i> <span>Figma</span></div>
+                        <div class="skill-item"><i class="fas fa-camera"></i> <span>Photoshop</span></div>
+                        <div class="skill-item"><i class="fas fa-pen-nib"></i> <span>Illustrator</span></div>
+                        <div class="skill-item"><i class="fas fa-video"></i> <span>Premiere</span></div>
+                        <div class="skill-item"><i class="fab fa-html5"></i> <span>HTML/CSS</span></div>
+                        <div class="skill-item"><i class="fas fa-layer-group"></i> <span>Branding</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Selected Works</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);"></div>
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Brand Identity Renewal</h3>
+                        <p class="project-cat">Branding / Logo Design</p>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card reveal delay-1">
+                    <div class="project-image">
+                        <div class="placeholder-img" style="background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);"></div>
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce App UI</h3>
+                        <p class="project-cat">UI/UX / Mobile</p>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card reveal delay-2">
+                    <div class="project-image">
+                        <div class="placeholder-img" style="background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);"></div>
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Modern Minimalist Poster</h3>
+                        <p class="project-cat">Print / Typography</p>
+                    </div>
+                </article>
+                
+                 <!-- Project 4 -->
+                 <article class="project-card reveal">
+                    <div class="project-image">
+                        <div class="placeholder-img" style="background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);"></div>
+                        <div class="project-overlay">
+                            <button class="view-project-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Social Media Kit</h3>
+                        <p class="project-cat">Marketing / Graphics</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper reveal">
+                <div class="contact-info">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Let's create something <br> amazing together.</h2>
+                    <p>Open for freelance projects and collaborations.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@aboobacker.design">hello@aboobacker.design</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+1234567890">+123 456 7890</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Aboobacker. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
