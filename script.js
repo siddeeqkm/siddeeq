@@ -91,6 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Close Menu Button
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    }
+
     // --- AUTO-DISCOVERY AND MANUAL GALLERY LOGIC ---
 
     // 1. Manual List: Known files with complex names
