@@ -208,14 +208,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Increased limit to 50 to accommodate more uploads
         for (let i = 1; i <= 50; i++) {
             categories.forEach(c => {
-                // Check multiple extensions and formats
+                // 1. Lowercase Standard (branding-1.jpg)
                 checkAndLoadImage(`${c.prefix}-${i}.jpg`, c.cat, c.title, c.label);
                 checkAndLoadImage(`${c.prefix}-${i}.jpeg`, c.cat, c.title, c.label);
-                checkAndLoadImage(`${c.prefix}-${i}.png`, c.cat, c.title, c.label); // Added PNG
-                
+                checkAndLoadImage(`${c.prefix}-${i}.png`, c.cat, c.title, c.label);
+
+                // 2. Title Case Support (Branding-1.jpg) - For users uploading capitalized files
+                // Capitalize first letter of prefix
+                const titlePrefix = c.prefix.charAt(0).toUpperCase() + c.prefix.slice(1);
+                checkAndLoadImage(`${titlePrefix}-${i}.jpg`, c.cat, c.title, c.label);
+                checkAndLoadImage(`${titlePrefix}-${i}.jpeg`, c.cat, c.title, c.label);
+                checkAndLoadImage(`${titlePrefix}-${i}.png`, c.cat, c.title, c.label);
+
+                // 3. Space variations
                 checkAndLoadImage(`${c.prefix} ${i}.jpg`, c.cat, c.title, c.label);
                 checkAndLoadImage(`${c.prefix} ${i}.jpeg`, c.cat, c.title, c.label);
-                checkAndLoadImage(`${c.prefix} ${i}.png`, c.cat, c.title, c.label); // Added PNG
+                checkAndLoadImage(`${c.prefix} ${i}.png`, c.cat, c.title, c.label);
             });
         }
     };
