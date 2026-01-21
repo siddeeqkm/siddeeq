@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Manual List: Known files with complex names
     const manualImages = [
-        "Branding-1-atmos.jpg", // Branding 1 (Special Name)
+        "branding-1-atmos.jpg", // Branding 1 (Special Name)
         "logo-3 .jpeg",         // Logo 3 (Has space)
         "poster-14-left-side.jpeg.jpeg",
         "poster-14-right-side.jpeg"
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         itemDiv.setAttribute('data-category', category);
 
         itemDiv.innerHTML = `
-            <img src="${filename}" alt="${title}">
+            <img src="${filename}" alt="${title}" loading="lazy">
             <div class="gallery-overlay">
                 <div class="overlay-content">
                     <h3>${title}</h3>
@@ -187,6 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
+        img.onerror = () => {
+            // Silently fail if image doesn't exist
+        };
         img.src = filename;
     };
 
@@ -202,13 +205,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         // Check common formats: name-N.jpg, name-N.jpeg, name N.jpg...
-        // Checking numbers 1 to 20
-        for (let i = 1; i <= 20; i++) {
+        // Increased limit to 50 to accommodate more uploads
+        for (let i = 1; i <= 50; i++) {
             categories.forEach(c => {
+                // Check multiple extensions and formats
                 checkAndLoadImage(`${c.prefix}-${i}.jpg`, c.cat, c.title, c.label);
                 checkAndLoadImage(`${c.prefix}-${i}.jpeg`, c.cat, c.title, c.label);
+                checkAndLoadImage(`${c.prefix}-${i}.png`, c.cat, c.title, c.label); // Added PNG
+                
                 checkAndLoadImage(`${c.prefix} ${i}.jpg`, c.cat, c.title, c.label);
                 checkAndLoadImage(`${c.prefix} ${i}.jpeg`, c.cat, c.title, c.label);
+                checkAndLoadImage(`${c.prefix} ${i}.png`, c.cat, c.title, c.label); // Added PNG
             });
         }
     };
