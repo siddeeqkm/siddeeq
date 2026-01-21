@@ -187,82 +187,175 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
-    /* Offset fixed header */
+    padding-top: 80px; /* Offset fixed header */
+    padding-bottom: 50px;
 }
 
-.hero-content {
-    position: relative;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text-content {
     z-index: 10;
-    max-width: 800px;
 }
 
 .hero .subtitle {
     display: block;
     font-size: 18px;
     color: var(--text-secondary);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-family: var(--font-accent);
     font-style: italic;
+    font-weight: 500;
 }
 
 .hero h1 {
-    font-size: 90px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 20px;
+    font-size: 85px; /* Slightly adjusted for layout */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
     letter-spacing: -2px;
+    color: var(--text-primary);
 }
 
 .hero h2 {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 300;
     color: var(--text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .hero p {
     font-size: 18px;
-    max-width: 500px;
+    max-width: 480px;
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    line-height: 1.7;
 }
 
-/* Decorative Background Elements */
-.hero-decorative {
+/* Hero Image & Decorations */
+.hero-image-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 500px; /* Ensure space for image */
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align image to bottom for cut-off effect if needed */
+}
+
+/* Large Outline Circle */
+.decorative-circle-outline {
     position: absolute;
-    top: 50%;
-    right: -10%;
-    transform: translateY(-50%);
-    z-index: 1;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-.hero-decorative .circle {
+    width: 550px;
+    height: 550px;
+    border: 1px solid #1a1a1a; /* Thin black outline */
     border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Solid Fill Circle (Bottom Right) */
+.decorative-circle-solid {
     position: absolute;
-}
-
-.circle-1 {
-    width: 600px;
-    height: 600px;
-    border: 1px solid #000;
-    right: 0;
-    top: -300px;
-}
-
-.circle-2 {
     width: 400px;
     height: 400px;
-    background-color: #f0f0f0;
-    right: 150px;
-    top: 50px;
+    background-color: #f0f0f0; /* Light gray */
+    border-radius: 50%;
+    bottom: -150px;
+    right: 0px;
+    z-index: 3;
+}
+
+/* Profile Image */
+.hero-profile-img {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    max-height: 600px; /* Adjust based on image aspect ratio */
+    max-width: 120%;   /* Allow slight overflow */
+    object-fit: contain;
+    /* Optional: Slight drop shadow if needed to separate from bg */
+    /* filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); */
+    bottom: 150px; /* Adjust to sit correctly */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 60px;
+    }
+    .decorative-circle-outline {
+        width: 450px;
+        height: 450px;
+    }
+    .decorative-circle-solid {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-text-content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image-content {
+        min-height: 400px;
+    }
+
+    .hero-image-wrapper {
+        width: 350px;
+        height: 350px;
+    }
+
+    .decorative-circle-outline {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .decorative-circle-solid {
+        width: 250px;
+        height: 250px;
+        bottom: -40px;
+        right: -40px;
+    }
+    
+    .hero-profile-img {
+         max-height: 450px;
+    }
 }
 
 /* About Section */
