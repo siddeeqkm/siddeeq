@@ -236,4 +236,49 @@
     <script src="script.js"></script>
 </body>
 
-</html>
+</html><script>
+const canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+canvas.style.position="fixed";
+canvas.style.top=0;
+canvas.style.left=0;
+canvas.style.pointerEvents="none";
+
+const ctx = canvas.getContext("2d");
+let particles=[];
+
+function resize(){
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+}
+resize();
+window.onresize=resize;
+
+document.onmousemove = e=>{
+  for(let i=0;i<5;i++){
+    particles.push({
+      x:e.clientX,
+      y:e.clientY,
+      vx:(Math.random()-0.5)*2,
+      vy:(Math.random()-1)*2,
+      life:100
+    });
+  }
+};
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach((p,i)=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.life--;
+    ctx.fillStyle="white";
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,2,0,Math.PI*2);
+    ctx.fill();
+    if(p.life<=0) particles.splice(i,1);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
